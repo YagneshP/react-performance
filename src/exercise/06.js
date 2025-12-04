@@ -43,16 +43,12 @@ function dogReducer(state, action) {
   }
 }
 
-function DogProvider({children}) {
+function DogProvider(props) {
   const [state, dispatch] = React.useReducer(dogReducer, {
     dogName: '',
   })
 
-  return (
-    <DogNameContext.Provider value={[state, dispatch]}>
-      {children}
-    </DogNameContext.Provider>
-  )
+  return <DogNameContext.Provider value={[state, dispatch]} {...props} />
 }
 
 function AppProvider({children}) {
