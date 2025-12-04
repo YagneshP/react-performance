@@ -118,7 +118,6 @@ function withStateSlice(Component, slice) {
   })`
   return React.memo(React.forwardRef(Wrapper))
 }
-// const cell = state.grid[row][column]
 
 function Cell({state: cell, row, column}) {
   const dispatch = useAppDispatch()
